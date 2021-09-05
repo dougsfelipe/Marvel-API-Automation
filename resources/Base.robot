@@ -2,6 +2,7 @@
 Documentation   Aqui e onde tudo comeac
 
 Library  RequestsLibrary
+Library  Helpers.py
 
 Resource  routes/Characters.robot
 
