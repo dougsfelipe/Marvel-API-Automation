@@ -2,16 +2,15 @@
 Documentation    Suite de Testes marvel
 
 Resource    ${EXECDIR}/resources/Base.robot
-Library     ${EXECDIR}/resources/factories/Thanos.py
+Library     ${EXECDIR}/resources/factories/Guardians.py
 Library     ${EXECDIR}/resources/factories/DeadPool.py
 
-Suite Setup     Run Keywords    Set Client Key  douglacs@gmail.com
-...             AND             Back To The Past
+Suite Setup     Super Setup     douglacs@gmail.com
 
 *Test Cases*
 Deve cadastrar um personagem
 
-    ${personagem}   Factory Thanos
+    ${personagem}   Factory Star Lord
     ${response}     POST New Character    ${personagem}
 
     Status Should Be    200    ${response}
@@ -19,7 +18,7 @@ Deve cadastrar um personagem
 
 Não deve cadastrar com o mesmo nome
 
-    ${personagem}         Factory DeadPool
+    ${personagem}         Factory Groot
     POST New Character    ${personagem}
 
 
